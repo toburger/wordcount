@@ -5,6 +5,7 @@ cpp/wc_hash_nosync
 cpp/wc_vector
 cpp/wc_v5
 cpp/wc_v6
+cpp/wc_v7
 java -classpath java WordCount
 java -classpath java WordCountEntries
 julia julia/wordcount.jl
