@@ -16,5 +16,6 @@ php5.6 php/wordcount.php
 php7.0 php/wordcount.php
 go/bin/wordcount
 mono csharp/WordCountList.exe
+mono fsharp/wordcount.exe
 haskell/WordCount
 rust/wordcount/wordcount

@@ -1,7 +1,7 @@
 FROM ubuntu
 MAINTAINER Judit Acs
 RUN apt-get update
-RUN yes | apt-get install -y wget curl gcc g++ nano python perl git default-jdk time software-properties-common mono-mcs ghc cabal-install
+RUN yes | apt-get install -y wget curl gcc g++ nano python perl git default-jdk time software-properties-common mono-mcs fsharp ghc cabal-install
 RUN yes | apt-add-repository ppa:ondrej/php
 RUN yes | apt-add-repository ppa:staticfloat/juliareleases
 RUN yes | apt-get update
