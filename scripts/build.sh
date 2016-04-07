@@ -1,24 +1,32 @@
 #!/usr/bin/env bash
 
 cd cpp
-g++ wordcount_map.cpp -std=c++11 -o wc_baseline -O3
-g++ wordcount_hashtable.cpp -std=c++11 -o wc_baseline_hash -O3
-g++ wordcount_hashtable_nosync_stdio.cpp -std=c++11 -o wc_hash_nosync -O3
-g++ wordcount_vector.cpp -std=c++11 -o wc_vector -O3
+g++ wordcount_baseline.cpp -std=c++11 -o wordcount_baseline -O3
+g++ wordcount.cpp -std=c++11 -o wordcount -O3
+clang++-3.6 wordcount.cpp -std=c++11 -o wordcount_clang -O3
+
+cd ../c
+gcc wordcount.c -o wordcount -O3 -Wall
+
+cd ../d
+dmd -O -release -inline -boundscheck=off wordcount.d
 
 cd ../java
-javac WordCount.java
-javac WordCountEntries.java
+javac WordCountBaseline.java
+javac -cp .:trove-3.0.3.jar WordCountOptimized.java
 
 cd ../javascript
 npm install
+
+cd ../typescript
+npm install --unsafe-perm
 
 cd ../go
 export GOPATH=$(pwd)
 go install wordcount
 
 cd ../csharp
-mcs WordCountList.cs
+mcs WordCount.cs
 
 cd ../fsharp
 fsharpc wordcount.fsx
@@ -30,3 +38,10 @@ cp dist/build/WordCount/WordCount .
 cd ../rust/wordcount
 cargo build --release
 cp target/release/wordcount .
+cd ..
+
+cd ../scala
+scalac Wordcount.scala
+
+cd ../elixir
+MIX_ENV=prod mix escript.build > /dev/null

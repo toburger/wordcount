@@ -5,78 +5,72 @@ Counting words in different programming languages.
 See the article on this project:
 http://juditacs.github.io/2015/11/26/wordcount.html
 
+or the follow-up article:
+http://juditacs.github.io/2016/03/19/wordcount2.html
+
 # Leaderboard
 
-Updated: 07-12-2015 20:00
+## Full Hungarian Wikipedia
 
-On 5 million lines from the Hungarian Wikipedia:
+Updated: April 4, 2016
 
-Notes:
-* <b>New 2nd place, a clever Python implementation by @gaborszabo88</b>
-* improved Perl, Julia and Javascript versions
-* removed two C++ versions
-* NodeJS runs out of memory (16GB is not enough) - fixed by @szelpe
-* a faster C# (mono) version added by @szelpe
-* Golang took over Python and is now 2nd place - congrats @siklosid
-* Haskell version by @larion
-* further test are run only on the Hungarian Wikipedia, the other tables are deprecated
+Only the ones that finish are listed. The rest run out of memory.
 
-| Rank | Experiment | CPU seconds | User time | Maximum memory | Contributor
-| :---: | :---: | :---: | :---: | :---: | :--: |
-| 1 | cpp/wc_vector | 34.21 | 32.73 | 772048 | @juditacs |
-| 2 | python/wordcount_py2gabor.py | 36.93 | 35.69 | 596792 | @gaborszabo88 |
-| 3 | go/bin/wordcount | 40.92 | 39.37 | 856128 | @siklosid |
-| 4 | python/wordcount_py2.py | 66.65 | 64.68 | 1433152 | @juditacs |
-| 5 | java -classpath java WordCount | 79.92 | 68.17 | 1799236 | @DavidNemeskey |
-| 6 | cpp/wc_baseline_hash | 85.8 | 70.14 | 971720 | @juditacs |
-| 7 | mono csharp/WordCountList.exe | 100.69 | 71.01 | 900496 | @szelpe |
-| 8 | perl/wordcount.pl | 103.82 | 101.63 | 1237776 | @larion |
-| 9 | python/wordcount_py3.py | 105.08 | 102.45 | 1241144 | @juditacs |
-| 10 | php php/wordcount.php | 135.94 | 118.29 | 2119284 | @bpatrik |
-| 11 | julia julia/wordcount.jl | 143.81 | 140.8 | 2558176 |
-| 12 | bash/wordcount.sh | 280.79 | 287.16 | 11564 | @juditacs |
-| 13 | haskell/WordCount | 290.53 | 285.36 | 4208920 | @larion |
-| 14 | nodejs javascript/wordcount.js | 702.88 | 701.76 | 985500 | @kundralaci |
+| Rank | Experiment | CPU seconds | User time | Maximum memory | Contributor |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | rust/wordcount/wordcount | 154.86 | 148.16 | 6867252 | Joshua Holmer | 
+| 2 | java -Xmx6G -classpath java:java/trove-3.0.3.jar WordCountOptimized | 217.75 | 262.39 | 3929384 | Sam Van Oort | 
+| 3 | cpp/wordcount_clang | 225.96 | 214.96 | 4373408 | Dmitry Andreev, Matias Fontanini, Judit Acs | 
+| 4 | cpp/wordcount | 230.23 | 217.0 | 4373432 | Dmitry Andreev, Matias Fontanini, Judit Acs | 
+| 5 | d/wordcount | 231.02 | 219.36 | 6294800 | Pavel Chebotarev | 
+| 6 | c/wordcount | 296.55 | 284.99 | 2424084 | gaebor | 
+| 7 | python/wordcount_py2.py | 302.02 | 289.65 | 3893812 | Judit Acs | 
+| 8 | go/bin/wordcount | 315.19 | 305.57 | 6084804 | David Siklosi | 
+| 9 | php7.0 php/wordcount.php | 429.57 | 345.3 | 4111168 | Braun Patrik | 
+| 10 | mono csharp/WordCount.exe | 466.53 | 447.97 | 4464920 | Joe Amenta, Tim Posey, Peter Szel | 
+| 11 | python/wordcount_py2_baseline.py | 511.12 | 490.27 | 8802472 | Judit Acs | 
+| 12 | perl/wordcount.pl | 778.48 | 758.74 | 7100124 | Larion Garaczi, Judit Acs | 
+| 13 | java -Xmx6G -classpath java WordCountBaseline | 791.52 | 1077.33 | 6150272 | Sam Van Oort, Rick Hendricksen, Dávid Márk Nemeskey | 
+| 14 | python/wordcount_py3.py | 877.93 | 854.83 | 7672096 | Judit Acs | 
+| 15 | php5.6 php/wordcount.php | 1051.85 | 940.92 | 12682668 | Braun Patrik | 
+| 16 | lua lua/wordcount.lua | 1134.88 | 1029.69 | 7023604 | daurnimator | 
+| 17 | julia julia/wordcount.jl | 1554.77 | 1519.4 | 7393432 | Attila Zseder, getzdan | 
+| 18 | bash/wordcount.sh | 2432.64 | 2538.23 | 13772 | Judit Acs | 
+| 19 | elixir/wordcount | 2596.05 | 2552.12 | 13938560 | Norbert Melzer | 
+| 20 | cpp/wordcount_baseline | 3005.61 | 2909.42 | 5965548 | Judit Acs | 
 
+## 5 million lines from the Hungarian Wikipedia
 
-## Not updated
+Updated: April 4, 2016
 
-On the full Hungarian Wikisource:
-
-| Rank | Experiment | CPU seconds | User time | Maximum memory |
-| :---: | :---: | :---: | :---: | :---: |
-| 1 | cpp/wc_vector | 15.75 | 11.65 | 245316 |
-| 2 | cpp/wc_hash_nosync | 18.81 | 15.02 | 327184 |
-| 3 | python/wordcount_py2.py | 20.02 | 19.58 | 554352 |
-| 4 | cpp/wc_baseline_hash | 24.23 | 20.45 | 343276 |
-| 5 | java -classpath java WordCount | 27.37 | 31.39 | 545940 |
-| 6 | java -classpath java WordCountEntries | 28.13 | 32.23 | 540276 |
-| 7 | python/wordcount_py3.py | 33.06 | 32.59 | 482988 |
-| 8 | cpp/wc_baseline | 35.1 | 31.25 | 355692 |
-| 9 | perl/wordcount.pl | 39.15 | 38.66 | 447000 |
-| 10 | php php/wordcount.php | 39.82 | 35.58 | 781668 |
-| 11 | nodejs javascript/wordcount.js | 72.93 | 67.14 | 1005116 |
-| 12 | bash/wordcount.sh | 82.36 | 93.9 | 12924 |
-| 13 | julia julia/wordcount.jl | 94.46 | 93.51 | 725232 |
-
-
-On a smaller dataset:
-
-| Rank | Experiment | CPU seconds | User time | Maximum memory |
-| :---: | :---: | :---: | :---: | :---: |
-| 1 | cpp/wc_vector | 6.82 | 4.68 | 125856 |
-| 2 | cpp/wc_hash_nosync | 8.04 | 6.07 | 163404 |
-| 3 | python/wordcount_py2.py | 8.68 | 8.48 | 280616 |
-| 4 | cpp/wc_baseline_hash | 10.18 | 8.14 | 171656 |
-| 5 | java -classpath java WordCount | 13.56 | 15.66 | 404064 |
-| 6 | java -classpath java WordCountEntries | 13.8 | 15.77 | 398768 |
-| 7 | cpp/wc_baseline | 13.9 | 12.0 | 178084 |
-| 8 | python/wordcount_py3.py | 14.14 | 13.86 | 245164 |
-| 9 | php php/wordcount.php | 15.16 | 13.15 | 396516 |
-| 10 | perl/wordcount.pl | 17.04 | 16.79 | 225352 |
-| 11 | nodejs javascript/wordcount.js | 27.9 | 24.93 | 577472 |
-| 12 | bash/wordcount.sh | 34.92 | 40.51 | 10768 |
-
+| Rank | Experiment | CPU seconds | User time | Maximum memory | Contributor |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | rust/wordcount/wordcount | 21.49 | 20.87 | 990012 | Joshua Holmer | 
+| 2 | java -Xmx6G -classpath java:java/trove-3.0.3.jar WordCountOptimized | 29.76 | 34.41 | 962244 | Sam Van Oort | 
+| 3 | d/wordcount | 29.79 | 28.97 | 752676 | Pavel Chebotarev | 
+| 4 | cpp/wordcount | 33.58 | 32.51 | 758728 | Dmitry Andreev, Matias Fontanini, Judit Acs | 
+| 5 | cpp/wordcount_clang | 33.84 | 32.95 | 758724 | Dmitry Andreev, Matias Fontanini, Judit Acs | 
+| 6 | go/bin/wordcount | 38.84 | 37.86 | 859284 | David Siklosi | 
+| 7 | python/wordcount_py2.py | 38.89 | 37.98 | 595500 | Gabor Szabo | 
+| 8 | c/wordcount | 39.64 | 38.49 | 427180 | gaebor | 
+| 9 | mono csharp/WordCount.exe | 48.18 | 46.37 | 836040 | Joe Amenta, Tim Posey, Peter Szel | 
+| 10 | php7.0 php/wordcount.php | 54.3 | 40.2 | 709904 | Braun Patrik | 
+| 11 | python/wordcount_py2_baseline.py | 64.56 | 63.02 | 1438388 | Judit Acs | 
+| 12 | java -Xmx6G -classpath java WordCountBaseline | 89.12 | 111.27 | 1602580 | Sam Van Oort, Rick Hendricksen, Dávid Márk Nemeskey | 
+| 13 | python/wordcount_py3.py | 98.33 | 96.62 | 1246564 | Judit Acs | 
+| 14 | perl/wordcount.pl | 113.04 | 110.78 | 1242056 | Larion Garaczi, Judit Acs | 
+| 15 | php5.6 php/wordcount.php | 129.39 | 110.86 | 2126736 | Braun Patrik | 
+| 16 | lua lua/wordcount.lua | 132.04 | 116.02 | 1210248 | daurnimator | 
+| 17 | ruby2.3 ruby/wordcount.rb | 147.07 | 143.92 | 3849204 | Joshua Holmer | 
+| 18 | julia julia/wordcount.jl | 152.88 | 146.15 | 2490572 | Attila Zseder, getzdan | 
+| 19 | scala -J-Xmx2g -classpath scala Wordcount | 174.09 | 221.95 | 1457272 | Hans van den Bogert | 
+| 20 | elixir/wordcount | 268.48 | 265.58 | 2716684 | Norbert Melzer | 
+| 21 | bash/wordcount.sh | 276.14 | 290.33 | 13608 | Judit Acs | 
+| 22 | haskell/WordCount | 295.73 | 286.33 | 4216656 | Larion Garaczi | 
+| 23 | cpp/wordcount_baseline | 354.01 | 338.81 | 983292 | Judit Acs | 
+| 24 | java -cp clojure.jar clojure.main clojure/wordcount.clj | 357.75 | 379.64 | 2158764 | lverweijen | 
+| 25 | nodejs javascript/wordcount.js | 578.55 | 577.19 | 972904 | Laci Kundra | 
+| 26 | nodejs typescript/wordcount.js | 628.72 | 604.63 | 920764 | Braun Patrik | 
 
 # The task
 
@@ -108,12 +102,14 @@ The output should contain lines like this:
     art     1
     pear    1
 
-## Test corpus: Hungarian Wikisource
+## Test corpus: Hungarian Wikisource and Wikipedia
 
-`scripts/create_input.sh` downloads the latest Hungarian Wikisource XML dump.
+`scripts/create_input.sh` downloads and unpacks the latest Hungarian Wikisource XML dump.
 Why Wikisource? It's not too small not too large and more importantly, it's valid utf8.
 Why Hungarian? There are many non-ascii characters and the number of different word types is high.
 
+`script/create_large_input.sh` downloads the unpacks the latest Hungarian Wikipedia.
+This is the largest input used for comparison, see the first leaderboard.
 
 ### Usage
 
@@ -121,17 +117,10 @@ To test on a small sample:
 
     time cat data/huwikisource-latest-pages-meta-current.xml | head -10000 | python3 python/wordcount_py3.py > python_out
 
-# Using the provided scripts
+## Installation with Docker
 
-## Installation
-
-There are two ways to install all the dependencies:
-
-1. Build a Docker image with the provided Dockerfile, which installs all the required packages.
-2. Install them manually via a package manager. The Docker image is an Ubuntu image but the same packages work for me on Manjaro Linux as well. Use this command on Ubuntu to install all dependencies, but be prepared for a lot of new packages. You've been warned.
-    
-    sudo apt-get install wget gcc python npm perl php5 git default-jdk time
-
+I strongly recommend building the Docker image instead of installing every package manually, but it's possible to install the dependencies manually.
+See the installation commands in `Dockerfile`.
 
 ## Docker image
 
@@ -153,6 +142,10 @@ You should see the cloned directory in `/root`
 ## Downloading the dataset
 
     bash scripts/create_input.sh
+
+or the full dataset:
+
+    bash scripts/create_large_input.sh
 
 ## Compile/build/whatever the wordcount scripts
 
@@ -180,12 +173,14 @@ All commands are listed in the file `run_commands.txt` and the script `scripts/t
 
 ## Run the actual experiment on a larger dataset
 
-If all tests are passed, the scripts work reasonably well. This does not mean that all output will be the same, see the full test later.
+If all tests are passed, the scripts work reasonably well.
+This does not mean that all output will be the same, see the full test later.
 For now, we consider them good enough for testing.
 
-This command will run each test twice and save the results to results.txt.
+This command will run each test twice and append the results to results.txt.
+It's possible to add a comment at the end of each line.
 
-    bash scripts/compare.sh data/huwikisource-latest-pages-meta-current.xml 2
+    bash scripts/compare.sh data/huwikisource-latest-pages-meta-current.xml 2 "full huwikisource"
 
 Or test it on a part of huwikisource:
 
@@ -197,19 +192,20 @@ Results.txt in a tab separated file that can be formatted to a Markdown table wi
 
 This scripts prints the fastest run for each command in a markup table like this:
 
-| Experiment | CPU seconds | User time | Maximum memory |
-| --- | --- | --- | --- |
-| cpp/wc_vector | 2.68 | 2.37 | 32168 |
-| python/wordcount_py2.py | 2.68 | 2.61 | 71512 |
-| bash/wordcount.sh | 3.0 | 4.19 | 10820 |
+| Rank | Experiment | CPU seconds | User time | Maximum memory | Contributor |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | rust/wordcount/wordcount | 20.57 | 19.79 | 990008 | Joshua Holmer | 
+| 2 | cpp/wc_vector | 33.3 | 31.93 | 775952 | Matias Fontanini, Judit Acs | 
+| 3 | python/wordcount_py2gabor.py | 40.13 | 38.71 | 594800 | Gabor Szabo | 
 
 ## Adding a new program
 
-Adding a new programming language or a new version for an existing programming language consists of three steps:
+Adding a new programming language or a new version for an existing programming language consists of the following steps:
 
-1. add dependencies to the Dockerfile. Basically add the package to the existing apt-get package list.
-2. if it needs compiling or any other setup method, add it to `scripts/build.sh`
-3. add the actual invoke command to `run_commands.txt`
+1. Add dependencies to the Dockerfile. Basically add the package to the existing apt-get package list.
+2. If it needs compiling or any other setup method, add it to `scripts/build.sh`
+3. Add the actual invoke command to `run_commands.txt`
+4. If your executable differs from the source file, add the executable - source code mapping to `binary_mapping.txt`. This is used by `scripts/evaluate_results.py` for finding out the contributors of each program. The file is <b>tab-separated</b>.
 
 ### Adding your program to this experiment
 
@@ -217,44 +213,3 @@ Adding a new programming language or a new version for an existing programming l
 1. Your code passes all the tests.
 1. Make sure it runs for less than two minutes for 100,000 lines of text. If it is slower, it doesn't make much sense to add it.
 
-# Old notes for manual building and running
-
-## Javascript
-
-Nodejs and npm are needed.
-Install dependencies:
-
-    cd javascript
-    npm install
-
-Run:
-
-    node index.js
-
-
-## BASH
-
-Set the LC\_COLLATE variable to C to consider non-alphanumeric characters when sorting:
-
-    export LC_COLLATE=C
-
-Run:
-
-    time zcat de.gz | bash wordcount.sh > bash_out
-
-
-## Java
-
-Usage:
-
-    javac WordCount.java
-    time cat de | java WordCount > wc.java
-
-The JVM startup can be measured by e.g.
-
-    time echo "Hello" | java WordCount
-
-# TODO
-
-* compare full output on each language
-  * which one should be the oraculum?
