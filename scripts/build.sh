@@ -29,7 +29,7 @@ cd ../csharp
 mcs WordCount.cs
 
 cd ../fsharp
-fsharpc wordcount.fsx
+fsharpc wordcountOpt.fsx --out wordcount.exe
 
 cd ../haskell
 cabal install --verbose=0
